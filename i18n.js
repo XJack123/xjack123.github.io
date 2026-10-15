@@ -85,7 +85,7 @@ window.JackI18n = (() => {
  const t=text=>lang==='en'?(dictionary[text]||text):text;
  const localizedURL=href=>{const u=new URL(href,location.href);u.searchParams.set('lang',lang);if(new URLSearchParams(location.search).get('preview')==='1')u.searchParams.set('preview','1');return u.href;};
  document.documentElement.lang=lang==='en'?'en':'zh-CN';
- const title=titles[document.body.dataset.page];if(title)document.title=document.body.dataset.page==='home'?'jack':title[lang==='en'?1:0]+' — jack';
+ const title=titles[document.body.dataset.page];if(title)document.title=document.body.dataset.page==='home'?'Jack':title[lang==='en'?1:0]+' — Jack';
  for(const n of document.querySelectorAll('[data-i18n]'))n.textContent=t(n.dataset.i18n);
  for(const n of document.querySelectorAll('[placeholder]'))n.setAttribute('placeholder',t(n.getAttribute('placeholder')));
  for(const n of document.querySelectorAll('[aria-label]')){const label=n.getAttribute('aria-label');n.setAttribute('aria-label',t(label));}
