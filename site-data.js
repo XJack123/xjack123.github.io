@@ -1,6 +1,6 @@
 window.JACK_DATA = {
   "version": 2,
-  "revision": "044a7494-edbf-4363-8788-952c47e97cff",
+  "revision": "10bfaef5-5bfc-45a2-86ce-4fe4b53bb92d",
   "profile": {
     "name": "Jack",
     "headline": "保持好奇，\n探索不止。",
@@ -31,7 +31,7 @@ window.JACK_DATA = {
     },
     {
       "id": "7b776695-146f-41b2-a2d1-2cc4b6f58ebe",
-      "src": "assets/uploads/12626db6-df59-465b-864f-52ef813a0665.jpg",
+      "src": "assets/uploads/bfa3dfeb-4a14-49b4-96cd-bbfe8b4a4c65.jpg",
       "title": "日出",
       "caption": "",
       "category": "旅行",
@@ -59,7 +59,7 @@ window.JACK_DATA = {
     {
       "id": "10b880df-cfc4-4174-a176-31cc42eff85a",
       "src": "assets/uploads/6aca690c-cbbb-483e-90f7-e371476fcbb4.jpg",
-      "title": "雪人",
+      "title": "累",
       "caption": "",
       "category": "滑雪",
       "date": "2025-02-17",
