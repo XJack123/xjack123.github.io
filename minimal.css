@@ -24,9 +24,9 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible{
 .header .github-link{margin-left:0}
 body[data-page="home"] .header nav{display:none!important}
 .intro-only{max-width:900px;padding-block:35px 0;min-height:0}
-.home-introduction,.home-introduction:lang(en){font-size:15px;line-height:1.95;letter-spacing:-.1px;color:#444;white-space:normal}
-.home-introduction p,.home-introduction p:first-child{font-size:inherit;line-height:inherit;color:inherit;margin:0 0 23px}
-.home-introduction p:first-child{color:#333}
+.home-introduction,.home-introduction:lang(en){max-width:700px;font-size:17px;line-height:1.95;letter-spacing:0;color:#444;white-space:normal;text-wrap:pretty}
+.home-introduction p,.home-introduction p:first-child{font-size:inherit;line-height:inherit;color:inherit;margin:0 0 25px}
+.home-introduction p:first-child{font-size:18px;line-height:1.9;color:#303030}
 .module-buttons{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:28px;margin-top:53px;row-gap:32px;align-items:start}
 .module-entry{display:block;font-size:14px;line-height:1.9;color:#333}
 .module-title{text-decoration:underline;text-underline-offset:4px;text-decoration-color:#b8b8b8;text-decoration-thickness:1px}
@@ -155,8 +155,9 @@ body[data-page="home"] .header nav{display:none!important}
  .header nav,.header nav.open,html:lang(en) .header nav{padding-top:20px;gap:5px 18px!important;font-size:11px}
  .header nav>a{padding:3px 0}
  .intro-only{padding-block:29px 0;min-height:0}
- .home-introduction,.home-introduction:lang(en){font-size:14px;line-height:1.95}
- .home-introduction p,.home-introduction p:first-child{font-size:inherit;margin-bottom:21px}
+ .home-introduction,.home-introduction:lang(en){font-size:16px;line-height:1.95}
+ .home-introduction p,.home-introduction p:first-child{font-size:inherit;margin-bottom:22px}
+ .home-introduction p:first-child{font-size:17px;line-height:1.9}
  .module-buttons{grid-template-columns:repeat(2,minmax(0,1fr));gap:29px 25px;margin-top:37px}
  .module-entry{font-size:13px}
  .module-description{font-size:12px;line-height:1.95;margin-top:6px}
@@ -210,3 +211,28 @@ body[data-page="home"] .header nav{display:none!important}
  .preview-bar{font-size:10px}
 }
 @media(prefers-reduced-motion:reduce){*,*:before,*:after{transition:none!important}}
+
+/* CV: education, research and practice each have one clear place. */
+body[data-page="about"] .about-layout{grid-template-columns:160px minmax(0,1fr);gap:64px}
+.cv-section{padding:0 0 30px;margin-bottom:28px;border-bottom:1px solid var(--line)}
+.cv-section:last-child{border:0;padding-bottom:0;margin-bottom:0}
+.cv-section>h2{font-size:19px;font-weight:500;line-height:1.6;letter-spacing:-.2px;margin:0 0 20px;color:#303030}
+.cv-section .prose{font-size:15px;line-height:1.95;color:#555;max-width:650px}
+.cv-section .profile-details{margin:19px 0 0}
+.cv-section .profile-details>div{font-size:13px;padding:7px 0}
+.cv-section article+article{margin-top:23px}
+.cv-section h3{font-size:16px;font-weight:500;line-height:1.75;margin:0 0 7px;color:#363636}
+.cv-section p{font-size:14px;line-height:1.95;color:#626262;margin:8px 0 0}
+.cv-section .cv-meta{font-size:12px;color:#777;margin:0 0 11px}
+.cv-tools{display:flex;gap:8px 18px;flex-wrap:wrap;font-size:14px;color:#444;line-height:1.9;list-style:none;padding:0;margin:0 0 10px}
+@media(max-width:720px){
+ body[data-page="about"] .about-layout{display:block}
+ body[data-page="about"] .identity-card{display:flex;flex-wrap:wrap;align-items:center;gap:8px 20px;margin-bottom:32px;padding-bottom:22px;border-bottom:1px solid var(--line)}
+ body[data-page="about"] .identity-card h2{margin:0 auto 0 0}
+ body[data-page="about"] .identity-card .avatar[data-has-photo]{flex-basis:100%;margin:0 0 10px}
+ .cv-section{padding-bottom:26px;margin-bottom:25px}
+ .cv-section>h2{font-size:18px;margin-bottom:16px}
+ .cv-section .prose,.cv-section p{font-size:15px;line-height:1.9}
+ .cv-section h3{font-size:16px}
+ .cv-section .profile-details>div{font-size:13px}
+}

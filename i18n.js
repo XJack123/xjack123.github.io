@@ -55,7 +55,7 @@ window.JackI18n = (() => {
   "户外、日常与新的尝试。生活不止一种打开方式。": "Outdoors, everyday moments, and new experiences. There’s more than one way to live.",
   "给下一次出发，留一个位置。": "Room for the next adventure.",
   "这里等待着第一张属于我的照片。": "The first photo will find its home here.",
-  "学校": "Education",
+  "学校": "Institution",
   "研究方向": "Research interests",
   "所在城市": "Location",
   "全部": "All",
@@ -77,6 +77,7 @@ window.JackI18n = (() => {
 };
  Object.assign(dictionary,{"学习与思考": "Notes & Thoughts", "学一点，": "Learn a little.", "想深一点。": "Think a little deeper.", "记录学到的东西，也给还没想明白的问题留个位置。": "A place for what I’m learning — and the questions I’m still working through.", "搜索笔记": "Search notes", "按分类筛选文章": "Filter notes by category", "想法不必完整，先记下来。": "An idea doesn’t have to be finished to be worth writing down.", "学习笔记、日常思考，以及一路上的小发现，会陆续出现在这里。": "Study notes, everyday reflections, and small discoveries will find their way here.", "暂时没有匹配的笔记。": "No notes match just yet.", "试试其他关键词，或切换分类。": "Try another keyword or category.", "← 学习与思考": "← Notes & Thoughts", "这篇笔记暂时不在这里。": "This note isn’t here yet.", "文章可能尚未公开，或链接不完整。": "It may not be public yet, or the link may be incomplete.", "返回笔记列表 →": "Back to notes →", "学习笔记": "Study notes", "日常思考": "Reflections", "阅读 →": "Read →", "草稿预览": "Draft preview", "分钟阅读": "min read", "笔记详情": "Note"});
  Object.assign(dictionary,{"学习背景、项目经历，以及一路走来的积累。": "Education, experience, and what I’ve learned along the way.", "把问题变成实验，把想法付诸实践。": "Turning questions into experiments and ideas into practice.", "滑雪、徒步，和生活里值得收藏的瞬间。": "Skiing, hiking, and moments worth keeping.", "记下新知识，也留住尚未想明白的问题。": "Things I’m learning and questions I’m still thinking through.", "也可以在 GitHub 找到我。": "You can also find me on GitHub."});
+ Object.assign(dictionary,{"教育背景、研究经历与实践积累。": "Education, research, and practical experience.", "教育背景": "Education", "研究经历": "Research", "竞赛与实践": "Competitions & Practice", "工具": "Tools", "项目负责人 · 2025.04—2026.05": "Project lead · Apr 2025 – May 2026", "融合纵向 CT 影像与临床数据，开展特征编码、双图关系建模、注意力融合与实验分析。": "Combined longitudinal CT scans and clinical data, working on feature encoding, dual-graph modeling, attention-based fusion, and experimental analysis.", "国家级大学生创新创业训练计划 · 优秀结项": "National Undergraduate Innovation and Entrepreneurship Training Program · Outstanding completion", "建模竞赛 · 北京市二等奖 · 2025": "Modeling competition · Beijing second prize · 2025", "校级“创新杯”学术科技作品竞赛 · 二等奖 · 2026": "University Innovation Cup · Second prize · 2026", "实践涵盖变量关系建模、类别不平衡处理、验证性因子分析与 Bootstrap 推断。": "Work included statistical relationship modeling, class-imbalance handling, confirmatory factor analysis, and bootstrap inference."});
  const titles={notes:['学习与思考','Notes & Thoughts'],note:['笔记详情','Note'],home:['首页','Home'],about:['个人 CV','CV'],projects:['研究与项目','Research & Projects'],project:['项目详情','Project'],gallery:['户外与生活','Outdoors & Life']};
  const query=new URLSearchParams(location.search).get('lang');let saved='';
  try{saved=localStorage.getItem('jack-language')||'';}catch{}
