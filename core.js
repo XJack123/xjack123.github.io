@@ -17,7 +17,14 @@ window.JackCore = (() => {
    tx.oncomplete=()=>resolve(req.result); tx.onerror=()=>reject(tx.error); tx.onabort=()=>reject(tx.error || new Error('草稿保存被中止'));
   }); } finally { db.close(); }
  }
- const readDraft=()=>dbAction('readonly',store=>store.get('current'));
+ const readDraft=async()=>{
+  if(['127.0.0.1','localhost'].includes(location.hostname)&&new URLSearchParams(location.search).get('preview')==='1'){
+   const response=await fetch('/api/draft');
+   if(response.ok)return (await response.json()).state;
+   throw new Error('本机草稿无法读取，请确认管理台运行中。');
+  }
+  return dbAction('readonly',store=>store.get('current'));
+ };
  const writeDraft=value=>dbAction('readwrite',store=>store.put(value,'current'));
  const clearDraft=()=>dbAction('readwrite',store=>store.delete('current'));
  function safeURL(value,{image=false}={}) {
@@ -38,6 +45,13 @@ window.JackCore = (() => {
   return data;
  }
  function normalizeData(data){if(data.notes===undefined)data.notes=[];return data;}
+ function photoTitle(photo,assets={}){
+  const title=photo.title||'',name=assets[photo.src]?.name||photo.originalName||'';
+  const stem=name.replace(/\.[^.]+$/,'');
+  if((name&&(title===name||title===stem))||/^(?:IMG[_ -]?|DSC[FNO]?[_ -]?|PXL[_ -]?|DJI[_ -]?|DCIM[_ -]?)\d[\w .()-]*$/i.test(title)||/\.(?:jpe?g|png|webp|gif|heic|heif|dng)$/i.test(title))return '';
+  return title;
+ }
+
  function publicData(data){const out=clone(data);out.notes=(out.notes||[]).filter(n=>n.status==='published');return out;}
  function imageSource(path,assets={}){return assets[path]?.dataURL || safeURL(path,{image:true});}
  const usedPaths=data=>new Set([data.profile.avatar,...data.photos.map(p=>p.src),...data.projects.flatMap(p=>[p.cover,...(p.files||[]).map(f=>f.path)])].filter(Boolean));
@@ -56,5 +70,5 @@ window.JackCore = (() => {
  }
  function dataBytes(dataURL){return Uint8Array.from(atob(dataURL.split(',')[1]),c=>c.charCodeAt(0));}
  function download(blob,name){const link=document.createElement('a'),url=URL.createObjectURL(blob);link.href=url;link.download=name;link.click();setTimeout(()=>URL.revokeObjectURL(url),15000);}
- return {clone,normalizeData,publicData,readDraft,writeDraft,clearDraft,safeURL,dataFile,parseDataFile,imageSource,usedPaths,zip,dataBytes,download};
+ return {photoTitle,clone,normalizeData,publicData,readDraft,writeDraft,clearDraft,safeURL,dataFile,parseDataFile,imageSource,usedPaths,zip,dataBytes,download};
 })();
